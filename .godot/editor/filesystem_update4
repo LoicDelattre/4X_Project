@@ -1,0 +1,16 @@
+res://Map.tscn
+res://default_env.tres
+res://world.tscn
+res://ui.tscn
+res://TilesInfo/tile_info_ui.tscn
+res://Tiles/ui_tile_slot.tscn
+res://Camera2D.gd
+res://map.tscn
+res://Tiles/grey_tile.tscn
+res://Area.gd
+res://Shape.gd
+res://TilesInfo/tile_info_script.gd
+res://Tiles/TilesInfo/tile_info_ui.tscn
+res://TilesInfo/ui_tile_slot.tscn
+res://map/map.tscn
+res://map/map.gd

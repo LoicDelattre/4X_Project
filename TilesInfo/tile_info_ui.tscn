@@ -1,0 +1,126 @@
+[gd_scene load_steps=16 format=3 uid="uid://cop7fqpefcwff"]
+
+[ext_resource type="Script" path="res://TilesInfo/tile_info_script.gd" id="1_vc61q"]
+[ext_resource type="Texture2D" uid="uid://ds0l1ovps6lh" path="res://TilesInfo/inventory-background.png" id="2_nbyhd"]
+[ext_resource type="FontFile" uid="uid://croa3d05fou6" path="res://Fonts/KELMSCOT.ttf" id="3_obkbu"]
+[ext_resource type="Texture2D" uid="uid://brw3eui8xjk5q" path="res://TilesInfo/cross.png" id="4_xjt7r"]
+[ext_resource type="PackedScene" uid="uid://com0j4800snfj" path="res://TilesInfo/ui_tile_money_slot.tscn" id="5_x2uyh"]
+[ext_resource type="PackedScene" uid="uid://caam0h55p03sn" path="res://TilesInfo/ui_tile_manpower_slot.tscn" id="6_xobky"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_shv8e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v3h8v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ijm2c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qtubj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cpru7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8abs3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vgxdp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fo7bj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3gllm"]
+
+[node name="TileInfoUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vc61q")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+offset_top = -648.0
+offset_right = 360.0
+offset_bottom = -216.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_nbyhd")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="InfoLayout" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="HBoxContainer" parent="NinePatchRect/InfoLayout"]
+layout_mode = 2
+
+[node name="VSeparator1" type="VSeparator" parent="NinePatchRect/InfoLayout/Title"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_constants/separation = -20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_shv8e")
+
+[node name="Title" type="Label" parent="NinePatchRect/InfoLayout/Title"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_obkbu")
+theme_override_font_sizes/font_size = 64
+text = "Tile Info"
+
+[node name="VSeparator2" type="VSeparator" parent="NinePatchRect/InfoLayout/Title"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_shv8e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/InfoLayout/Title"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="NinePatchRect/InfoLayout/Title/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_v3h8v")
+
+[node name="ExitButton" type="Button" parent="NinePatchRect/InfoLayout/Title/VBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ijm2c")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qtubj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cpru7")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect/InfoLayout/Title/VBoxContainer/ExitButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_xjt7r")
+
+[node name="HSeparator" type="HSeparator" parent="NinePatchRect/InfoLayout"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8abs3")
+
+[node name="Main Stats" type="HBoxContainer" parent="NinePatchRect/InfoLayout"]
+layout_mode = 2
+
+[node name="VSeparator1" type="VSeparator" parent="NinePatchRect/InfoLayout/Main Stats"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_vgxdp")
+
+[node name="UITileSlot" parent="NinePatchRect/InfoLayout/Main Stats" instance=ExtResource("5_x2uyh")]
+layout_mode = 2
+
+[node name="VSeparator3" type="VSeparator" parent="NinePatchRect/InfoLayout/Main Stats"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_fo7bj")
+
+[node name="UITileSlot2" parent="NinePatchRect/InfoLayout/Main Stats" instance=ExtResource("6_xobky")]
+layout_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="NinePatchRect/InfoLayout/Main Stats"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_3gllm")
+
+[connection signal="pressed" from="NinePatchRect/InfoLayout/Title/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

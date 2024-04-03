@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://3nvfxbiv2jnh"]
+
+[ext_resource type="PackedScene" uid="uid://bufn2ecpm24wm" path="res://Tiles/orange_tile.tscn" id="1_shtmb"]
+[ext_resource type="PackedScene" uid="uid://bfmptsmyt1d4" path="res://Tiles/grey_tile.tscn" id="2_86gxc"]
+[ext_resource type="PackedScene" uid="uid://dla2com36m6m6" path="res://ui.tscn" id="3_dfylg"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="4_hihgj"]
+[ext_resource type="Texture2D" uid="uid://f4s2e8dgx3fx" path="res://europe_map_larger.png" id="4_wk1r0"]
+[ext_resource type="Script" path="res://map.gd" id="4_xhhmr"]
+
+[node name="Global" type="Node2D"]
+
+[node name="orange" parent="." instance=ExtResource("1_shtmb")]
+position = Vector2(81, 164)
+
+[node name="grey" parent="." instance=ExtResource("2_86gxc")]
+position = Vector2(54, 164)
+
+[node name="map" type="NinePatchRect" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(5400, 4800)
+offset_right = 5400.0
+offset_bottom = 4800.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_wk1r0")
+region_rect = Rect2(0, 0, 5400, 4800)
+script = ExtResource("4_xhhmr")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1000, 1000)
+script = ExtResource("4_hihgj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("3_dfylg")]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4iviliuoeg2e"]
+
+[ext_resource type="PackedScene" uid="uid://782cxsdlwkuf" path="res://map.tscn" id="1_5j0m4"]
+[ext_resource type="Texture2D" uid="uid://f4s2e8dgx3fx" path="res://europe_map_larger.png" id="2_ih2op"]
+[ext_resource type="Script" path="res://map.gd" id="2_j1uxd"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="4_7s3fl"]
+[ext_resource type="PackedScene" uid="uid://dla2com36m6m6" path="res://ui.tscn" id="4_q5soa"]
+
+[node name="World" type="Node2D"]
+
+[node name="map" parent="." instance=ExtResource("1_5j0m4")]
+offset_right = 5400.0
+offset_bottom = 4800.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ih2op")
+script = ExtResource("2_j1uxd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1000, 1000)
+script = ExtResource("4_7s3fl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("4_q5soa")]

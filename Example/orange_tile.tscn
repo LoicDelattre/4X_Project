@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bufn2ecpm24wm"]
+
+[ext_resource type="PackedScene" uid="uid://be00n8wqmik25" path="res://Example/tile.tscn" id="1_75g5t"]
+
+[node name="Area2D" instance=ExtResource("1_75g5t")]
+
+[node name="Sprite2D" parent="." index="1"]
+texture_filter = 1

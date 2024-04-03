@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfmptsmyt1d4"]
+
+[ext_resource type="PackedScene" uid="uid://be00n8wqmik25" path="res://Example/tile.tscn" id="1_rfdt8"]
+[ext_resource type="Texture2D" uid="uid://cqtlmgvfcpji4" path="res://Example/2.png" id="2_jhv1w"]
+
+[node name="Area2D" instance=ExtResource("1_rfdt8")]
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(16.5574, -21.0286, -28.4426, -22.0286, -28.4426, 19.9714, 16.5574, 17.9714, -0.442596, -2.02859)
+
+[node name="Sprite2D" parent="." index="1"]
+texture_filter = 1
+position = Vector2(54.6815, -5.44329)
+texture = ExtResource("2_jhv1w")
