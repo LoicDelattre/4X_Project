@@ -25,6 +25,5 @@ func _mouse_exit():
 	
 func _input(event):
 	if event is InputEventMouseButton and mouseInTile and event.is_action_pressed("left_click"):
-		print("clicked")
 		emit_signal("tileClicked", self.name)
 		#open tile info screen

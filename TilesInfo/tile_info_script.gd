@@ -2,6 +2,7 @@ extends Control
 
 var isOpen:bool = false
 @onready var mapNode : NinePatchRect = get_node("/root/World/map")
+@onready var titleNode : Label = $NinePatchRect/InfoLayout/TitleGroup/Title
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,7 +12,7 @@ func _ready():
 
 func open(tileName:String):
 	#tileName used to get data about that tile
-	print(tileName)
+	titleNode.set_text(tileName)
 	visible = true
 	isOpen = true
 

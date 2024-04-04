@@ -51,42 +51,45 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Title" type="HBoxContainer" parent="NinePatchRect/InfoLayout"]
+[node name="TitleGroup" type="HBoxContainer" parent="NinePatchRect/InfoLayout"]
 layout_mode = 2
 
-[node name="VSeparator1" type="VSeparator" parent="NinePatchRect/InfoLayout/Title"]
+[node name="VSeparator1" type="VSeparator" parent="NinePatchRect/InfoLayout/TitleGroup"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_constants/separation = -20
 theme_override_styles/separator = SubResource("StyleBoxEmpty_shv8e")
 
-[node name="Title" type="Label" parent="NinePatchRect/InfoLayout/Title"]
+[node name="Title" type="Label" parent="NinePatchRect/InfoLayout/TitleGroup"]
+custom_minimum_size = Vector2(250, 78)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_obkbu")
 theme_override_font_sizes/font_size = 64
 text = "Tile Info"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="VSeparator2" type="VSeparator" parent="NinePatchRect/InfoLayout/Title"]
+[node name="VSeparator2" type="VSeparator" parent="NinePatchRect/InfoLayout/TitleGroup"]
 layout_mode = 2
 theme_override_constants/separation = 0
 theme_override_styles/separator = SubResource("StyleBoxEmpty_shv8e")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/InfoLayout/Title"]
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/InfoLayout/TitleGroup"]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="NinePatchRect/InfoLayout/Title/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="NinePatchRect/InfoLayout/TitleGroup/VBoxContainer"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_v3h8v")
 
-[node name="ExitButton" type="Button" parent="NinePatchRect/InfoLayout/Title/VBoxContainer"]
+[node name="ExitButton" type="Button" parent="NinePatchRect/InfoLayout/TitleGroup/VBoxContainer"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ijm2c")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_qtubj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cpru7")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect/InfoLayout/Title/VBoxContainer/ExitButton"]
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect/InfoLayout/TitleGroup/VBoxContainer/ExitButton"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -123,4 +126,4 @@ layout_mode = 2
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_3gllm")
 
-[connection signal="pressed" from="NinePatchRect/InfoLayout/Title/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/InfoLayout/TitleGroup/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

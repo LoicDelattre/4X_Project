@@ -15,11 +15,11 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_pkjip")
 script = ExtResource("2_gpxvq")
 
-[node name="France" type="Area2D" parent="."]
+[node name="15" type="Area2D" parent="."]
 script = ExtResource("2_jsear")
 
-[node name="Shape" type="Polygon2D" parent="France"]
+[node name="Shape" type="Polygon2D" parent="15"]
 polygon = PackedVector2Array(874, 2690, 986, 2688, 1058, 2734, 1124, 2772, 1142, 2706, 1114, 2646, 1148, 2626, 1262, 2724, 1310, 2728, 1300, 2686, 1292, 2644, 1390, 2640, 1430, 2596, 1452, 2556, 1496, 2550, 1628, 2704, 1726, 2802, 1822, 2856, 1894, 2900, 1846, 2966, 1816, 3008, 1844, 3060, 1750, 3076, 1734, 3116, 1690, 3146, 1640, 3212, 1652, 3258, 1688, 3230, 1696, 3216, 1730, 3216, 1742, 3260, 1738, 3330, 1686, 3390, 1720, 3424, 1706, 3460, 1712, 3490, 1736, 3502, 1740, 3556, 1703.81, 3580.12, 1644, 3620, 1576, 3630, 1514, 3556, 1434, 3530, 1356, 3556, 1330, 3600, 1346, 3642, 1270, 3624, 1148, 3544, 1084, 3550, 1012, 3492, 968, 3414, 1052, 3168, 1054, 3030, 1026, 2986, 1046, 2924, 974, 2850, 868, 2782)
 
-[node name="Collision" type="CollisionPolygon2D" parent="France"]
+[node name="Collision" type="CollisionPolygon2D" parent="15"]
 position = Vector2(-10, 4)
