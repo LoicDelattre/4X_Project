@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TileCharacteristics" load_steps=2 format=3 uid="uid://dangdsw644ttp"]
+
+[ext_resource type="Script" path="res://UI/TilesInfo/TileData.gd" id="1_8m81p"]
+
+[resource]
+script = ExtResource("1_8m81p")
+title = "France"
+manpower = 500
+baseTax = 5
+population = 65
+tileID = 15

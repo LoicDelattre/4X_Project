@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dla2com36m6m6"]
+
+[ext_resource type="PackedScene" uid="uid://cop7fqpefcwff" path="res://UI/TilesInfo/tile_info_ui.tscn" id="1_0d8dj"]
+[ext_resource type="PackedScene" uid="uid://cp27i3xdebe0b" path="res://UI/Time/time_ui.tscn" id="2_5atm4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u24t0"]
+
+[node name="UI" type="MarginContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+
+[node name="TileInfoUI" parent="." instance=ExtResource("1_0d8dj")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u24t0")
+
+[node name="TimeUI" parent="Panel" instance=ExtResource("2_5atm4")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 1920.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(1.4, 1.4)
+size_flags_horizontal = 8

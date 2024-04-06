@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://mkaoxrwufc5q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f4wmm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uwdfi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w086y"]
+
+[node name="Speed" type="Button"]
+custom_minimum_size = Vector2(66, 66)
+offset_right = 60.0
+offset_bottom = 60.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f4wmm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_uwdfi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w086y")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 63.0
+offset_bottom = 63.0

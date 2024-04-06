@@ -1,0 +1,129 @@
+[gd_scene load_steps=16 format=3 uid="uid://cop7fqpefcwff"]
+
+[ext_resource type="Script" path="res://UI/TilesInfo/tile_info_script.gd" id="1_v5uok"]
+[ext_resource type="Texture2D" uid="uid://ds0l1ovps6lh" path="res://UI/TilesInfo/inventory-background.png" id="2_3peff"]
+[ext_resource type="FontFile" uid="uid://croa3d05fou6" path="res://Fonts/KELMSCOT.ttf" id="3_rii0m"]
+[ext_resource type="Texture2D" uid="uid://brw3eui8xjk5q" path="res://UI/TilesInfo/cross.png" id="4_rekbf"]
+[ext_resource type="PackedScene" uid="uid://ukqolt01gw13" path="res://UI/TilesInfo/ui_tile_tax_slot.tscn" id="5_l6bkb"]
+[ext_resource type="PackedScene" uid="uid://c3vvc7g1p5kje" path="res://UI/TilesInfo/ui_tile_manpower_slot.tscn" id="6_rg2nx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_shv8e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v3h8v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ijm2c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qtubj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cpru7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8abs3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vgxdp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fo7bj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3gllm"]
+
+[node name="TileInfoUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v5uok")
+
+[node name="Background" type="NinePatchRect" parent="."]
+layout_mode = 1
+offset_top = -648.0
+offset_right = 360.0
+offset_bottom = -216.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_3peff")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="InfoLayout" type="VBoxContainer" parent="Background"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleGroup" type="HBoxContainer" parent="Background/InfoLayout"]
+layout_mode = 2
+
+[node name="VSeparator1" type="VSeparator" parent="Background/InfoLayout/TitleGroup"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_constants/separation = -20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_shv8e")
+
+[node name="Title" type="Label" parent="Background/InfoLayout/TitleGroup"]
+custom_minimum_size = Vector2(250, 78)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_rii0m")
+theme_override_font_sizes/font_size = 64
+text = "Tile Info"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="Background/InfoLayout/TitleGroup"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_shv8e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/InfoLayout/TitleGroup"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="Background/InfoLayout/TitleGroup/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_v3h8v")
+
+[node name="ExitButton" type="Button" parent="Background/InfoLayout/TitleGroup/VBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ijm2c")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qtubj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cpru7")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Background/InfoLayout/TitleGroup/VBoxContainer/ExitButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_rekbf")
+
+[node name="HSeparator" type="HSeparator" parent="Background/InfoLayout"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8abs3")
+
+[node name="Main Stats" type="HBoxContainer" parent="Background/InfoLayout"]
+layout_mode = 2
+
+[node name="VSeparator1" type="VSeparator" parent="Background/InfoLayout/Main Stats"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_vgxdp")
+
+[node name="Manpower" parent="Background/InfoLayout/Main Stats" instance=ExtResource("5_l6bkb")]
+layout_mode = 2
+
+[node name="VSeparator3" type="VSeparator" parent="Background/InfoLayout/Main Stats"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_fo7bj")
+
+[node name="Tax" parent="Background/InfoLayout/Main Stats" instance=ExtResource("6_rg2nx")]
+layout_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="Background/InfoLayout/Main Stats"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_3gllm")
+
+[connection signal="pressed" from="Background/InfoLayout/TitleGroup/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

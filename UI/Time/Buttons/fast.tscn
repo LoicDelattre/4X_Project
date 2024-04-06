@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://4aaqvvbf04vu"]
+
+[ext_resource type="PackedScene" uid="uid://mkaoxrwufc5q" path="res://UI/Time/speed.tscn" id="1_yexux"]
+[ext_resource type="Texture2D" uid="uid://ni4plunjrg5r" path="res://UI/Time/Buttons/fast.png" id="2_fvm12"]
+
+[node name="Fast" instance=ExtResource("1_yexux")]
+
+[node name="NinePatchRect" parent="." index="0"]
+texture = ExtResource("2_fvm12")

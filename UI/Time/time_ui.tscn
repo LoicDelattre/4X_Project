@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://cp27i3xdebe0b"]
+
+[ext_resource type="Texture2D" uid="uid://ds0l1ovps6lh" path="res://UI/TilesInfo/inventory-background.png" id="1_dg07v"]
+[ext_resource type="Script" path="res://UI/Time/time_ui.gd" id="1_ilaet"]
+[ext_resource type="PackedScene" uid="uid://bly27wsk5xsr0" path="res://UI/Time/Buttons/slow.tscn" id="2_1y205"]
+[ext_resource type="PackedScene" uid="uid://cg8lv06h2hbfl" path="res://UI/Time/Buttons/slowest.tscn" id="2_6seet"]
+[ext_resource type="FontFile" uid="uid://croa3d05fou6" path="res://Fonts/KELMSCOT.ttf" id="2_nmjwa"]
+[ext_resource type="PackedScene" uid="uid://j1fld28ba208" path="res://UI/Time/Buttons/normal.tscn" id="4_8oj3j"]
+[ext_resource type="PackedScene" uid="uid://4aaqvvbf04vu" path="res://UI/Time/Buttons/fast.tscn" id="5_r7oop"]
+[ext_resource type="PackedScene" uid="uid://jx6watcy7fky" path="res://UI/Time/Buttons/fastest.tscn" id="6_bev0p"]
+
+[node name="TimeUI" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+script = ExtResource("1_ilaet")
+
+[node name="Background" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -460.0
+offset_bottom = 150.0
+grow_horizontal = 0
+texture = ExtResource("1_dg07v")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Time Display" type="VBoxContainer" parent="Background"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 280.0
+offset_bottom = 50.0
+theme_override_constants/separation = 32
+
+[node name="Date" type="HBoxContainer" parent="Background/Time Display"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Background/Time Display/Date"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Background/Time Display/Date/Panel"]
+layout_mode = 2
+offset_left = 90.0
+offset_right = 3784.0
+offset_bottom = 422.0
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/font = ExtResource("2_nmjwa")
+theme_override_font_sizes/font_size = 350
+text = "Normal, 1 January 2000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="Background/Time Display"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Slowest" parent="Background/Time Display/Buttons" instance=ExtResource("2_6seet")]
+layout_mode = 2
+
+[node name="Slow" parent="Background/Time Display/Buttons" instance=ExtResource("2_1y205")]
+layout_mode = 2
+
+[node name="Normal" parent="Background/Time Display/Buttons" instance=ExtResource("4_8oj3j")]
+layout_mode = 2
+
+[node name="Fast" parent="Background/Time Display/Buttons" instance=ExtResource("5_r7oop")]
+layout_mode = 2
+
+[node name="Fastest" parent="Background/Time Display/Buttons" instance=ExtResource("6_bev0p")]
+layout_mode = 2

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://3t6c5eoc0wrq"]
+
+[ext_resource type="Texture2D" uid="uid://byspmd1yhm041" path="res://UI/TilesInfo/inventory-slot.png" id="1_wgwkt"]
+[ext_resource type="FontFile" uid="uid://croa3d05fou6" path="res://Fonts/KELMSCOT.ttf" id="2_5ffcj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gl8c8"]
+
+[node name="UITileSlot" type="Panel"]
+custom_minimum_size = Vector2(68, 98)
+offset_right = 68.0
+offset_bottom = 98.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gl8c8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4.25, 5.9375)
+texture = ExtResource("1_wgwkt")
+centered = false
+
+[node name="Value" type="Label" parent="."]
+texture_filter = 2
+layout_mode = 2
+offset_top = 50.0
+offset_right = 680.0
+offset_bottom = 653.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("2_5ffcj")
+theme_override_font_sizes/font_size = 275
+text = "10"
+horizontal_alignment = 1
