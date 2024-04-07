@@ -75,3 +75,9 @@ layout_mode = 2
 
 [node name="Fastest" parent="Background/Time Display/Buttons" instance=ExtResource("6_bev0p")]
 layout_mode = 2
+
+[connection signal="pressed" from="Background/Time Display/Buttons/Slowest" to="." method="_on_slowest_pressed"]
+[connection signal="pressed" from="Background/Time Display/Buttons/Slow" to="." method="_on_slow_pressed"]
+[connection signal="pressed" from="Background/Time Display/Buttons/Normal" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="Background/Time Display/Buttons/Fast" to="." method="_on_fast_pressed"]
+[connection signal="pressed" from="Background/Time Display/Buttons/Fastest" to="." method="_on_fastest_pressed"]
