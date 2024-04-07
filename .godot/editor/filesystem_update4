@@ -1,8 +1,9 @@
 res://default_env.tres
 res://UI/Time/time_ui.tscn
-res://UI/Time/time_ui.gd
+res://global.gd
 res://map/map.tscn
 res://UI/TilesInfo/tile_info_ui.tscn
 res://UI/Time/speed.tscn
 res://world.tscn
 res://UI/ui.tscn
+res://UI/Time/time_ui.gd

@@ -6,8 +6,8 @@ extends Control
 
 var gameSpeedsTitles : Array = ["Slowest", "Slow", "Normal", "Fast", "Fastest"]
 var months : Array = ["January", "February", "March", "April", "May", "June", "July", "August", 
-					"September", "October", "November"]
-var longMonths : Array = ["January", "March", "May", "July", "August", "October", "December"]
+					"September", "October", "November", "December"]
+var longMonths : Array = ["January", "March", "May", "July", "August", "October"]
 var shortMonths : Array = ["April", "June", "September", "November"]
 
 var day : int = 1
@@ -24,7 +24,7 @@ func _ready() -> void:
 
 func timeInfoUpdate(gameIteration : int) -> void:
 	#at 60 fps and slowest speed, 1 day = 1 sec
-	if gameIteration*sqrt(gameSpeed)*1.5 >= 60:
+	if gameIteration*sqrt(gameSpeed)*2 >= 60:
 		globalNode.set_gameIteration(0)
 		setLabelText()
 		updateDate()
@@ -43,7 +43,7 @@ func updateDate() -> void:
 	elif month == 11 and day == 31:
 		year += 1
 		day = 1
-		month = 1
+		month = 0
 	else:
 		day += 1
 	pass
