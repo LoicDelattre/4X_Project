@@ -14,7 +14,7 @@ func _ready():
 func open(tileName:String):
 	#tileName used to get data about that tile
 	var tileData : TileCharacteristics = load("res://ProvincesData/" + tileName + ".tres")
-	titleNode.set_text(tileName)
+	titleNode.set_text(tileData.get_title())
 	taxAmountNode.set_text(str(tileData.get_baseTax()))
 	manpowerAmountNode.set_text(str(tileData.get_manpower()))
 	visible = true
