@@ -4,6 +4,9 @@ extends Control
 @onready var dateNode : Label = $"Background/Time Display/Date/Panel/Label"
 @onready var gameSpeed : int = globalNode.get_gameSpeed()
 
+signal newMonth
+signal newYear
+
 var gameSpeedsTitles : Array = ["Slowest", "Slow", "Normal", "Fast", "Fastest"]
 var months : Array = ["January", "February", "March", "April", "May", "June", "July", "August", 
 					"September", "October", "November", "December"]
@@ -34,16 +37,20 @@ func updateDate() -> void:
 	if months[month] in longMonths and day == 31:
 		day = 1
 		month += 1
+		emit_signal("newMonth")
 	elif months[month] in shortMonths and day == 30:
 		day = 1
 		month += 1
+		emit_signal("newMonth")
 	elif month == 1 and day == 28:
 		day = 1
 		month += 1
+		emit_signal("newMonth")
 	elif month == 11 and day == 31:
 		year += 1
 		day = 1
 		month = 0
+		emit_signal("newYear")
 	else:
 		day += 1
 	pass

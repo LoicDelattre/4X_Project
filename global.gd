@@ -9,6 +9,9 @@ var nationsID : Array = ["Spectator", "Iceland", "Norway", "Sweden", "Finland", 
 						"Danemark", "Lithuania", "Latvia", "Estonia", "France", "Belgium", "Netherlands", "Germany", 
 						"Poland"]
 
+var overlayMapMode : int = 0
+var mapModes : Array = ["Countries", "Military"]
+
 signal simulationUpdate
 signal gameSpeedChanged
 

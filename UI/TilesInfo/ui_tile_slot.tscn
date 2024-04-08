@@ -1,7 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://3t6c5eoc0wrq"]
 
-[ext_resource type="Texture2D" uid="uid://byspmd1yhm041" path="res://UI/TilesInfo/inventory-slot.png" id="1_wgwkt"]
+[ext_resource type="Texture2D" uid="uid://byspmd1yhm041" path="res://UI/Resources/inventory-slot.png" id="1_wgwkt"]
 [ext_resource type="FontFile" uid="uid://croa3d05fou6" path="res://Fonts/KELMSCOT.ttf" id="2_5ffcj"]
+
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gl8c8"]
 

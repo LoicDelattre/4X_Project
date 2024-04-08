@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxhlb5m5qsajt"
-path="res://.godot/imported/Idle2.png-cce4b3e7ed309c25392a53e7ad0a715a.ctex"
+uid="uid://d2m05x1co8pp3"
+path="res://.godot/imported/money.png-c915a7bef60c2a39cc1e4b49b304cac4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/TilesInfo/Idle2.png"
-dest_files=["res://.godot/imported/Idle2.png-cce4b3e7ed309c25392a53e7ad0a715a.ctex"]
+source_file="res://UI/Resources/money.png"
+dest_files=["res://.godot/imported/money.png-c915a7bef60c2a39cc1e4b49b304cac4.ctex"]
 
 [params]
 

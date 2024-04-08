@@ -5,12 +5,12 @@ var mouseInTile:bool = false
 var shape:Polygon2D
 var collision:CollisionPolygon2D
 
-signal tileClicked
+signal subTileClicked
 
 func _ready():
-	shape = $Shape
+	shape = $RegionShape
 	shape.set_color(Color(0, 0, 0, 0))
-	collision = $Collision
+	collision = $RegionCollision
 	
 	collision.set_polygon(shape.get_polygon())
 	pass
@@ -25,5 +25,5 @@ func _mouse_exit():
 	
 func _input(event):
 	if event is InputEventMouseButton and mouseInTile and event.is_action_pressed("left_click"):
-		emit_signal("tileClicked", self.name)
+		emit_signal("subTileClicked", self.name)
 		#open tile info screen

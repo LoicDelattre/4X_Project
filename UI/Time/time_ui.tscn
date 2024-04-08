@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://cp27i3xdebe0b"]
 
-[ext_resource type="Texture2D" uid="uid://ds0l1ovps6lh" path="res://UI/TilesInfo/inventory-background.png" id="1_dg07v"]
 [ext_resource type="Script" path="res://UI/Time/time_ui.gd" id="1_ilaet"]
 [ext_resource type="PackedScene" uid="uid://bly27wsk5xsr0" path="res://UI/Time/Buttons/slow.tscn" id="2_1y205"]
 [ext_resource type="PackedScene" uid="uid://cg8lv06h2hbfl" path="res://UI/Time/Buttons/slowest.tscn" id="2_6seet"]
+[ext_resource type="Texture2D" uid="uid://ds0l1ovps6lh" path="res://UI/Resources/inventory-background.png" id="2_b3ew6"]
 [ext_resource type="FontFile" uid="uid://croa3d05fou6" path="res://Fonts/KELMSCOT.ttf" id="2_nmjwa"]
 [ext_resource type="PackedScene" uid="uid://j1fld28ba208" path="res://UI/Time/Buttons/normal.tscn" id="4_8oj3j"]
 [ext_resource type="PackedScene" uid="uid://4aaqvvbf04vu" path="res://UI/Time/Buttons/fast.tscn" id="5_r7oop"]
@@ -25,7 +25,7 @@ anchor_right = 1.0
 offset_left = -460.0
 offset_bottom = 150.0
 grow_horizontal = 0
-texture = ExtResource("1_dg07v")
+texture = ExtResource("2_b3ew6")
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
