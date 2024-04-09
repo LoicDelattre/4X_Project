@@ -1,5 +1,7 @@
 extends Area2D
 
+var regionName : String = ""
+
 var mouseInTile:bool = false
 
 var shape:Polygon2D

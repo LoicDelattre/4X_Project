@@ -1,3 +1,6 @@
+Node2D
+Area2D
+Sprite2D
 TileMap
 Panel
 TextureRect
@@ -9,7 +12,4 @@ NinePatchRect
 Button
 Control
 Polygon2D
-Area2D
 CollisionPolygon2D
-CanvasLayer
-Camera2D
