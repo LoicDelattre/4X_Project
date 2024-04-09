@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dla2com36m6m6"]
+[gd_scene load_steps=6 format=3 uid="uid://dla2com36m6m6"]
 
 [ext_resource type="PackedScene" uid="uid://cop7fqpefcwff" path="res://UI/TilesInfo/tile_info_ui.tscn" id="1_0d8dj"]
+[ext_resource type="PackedScene" uid="uid://wj6rgy1l7c2" path="res://UI/Menus/menus_ui.tscn" id="1_22aw8"]
 [ext_resource type="PackedScene" uid="uid://cp27i3xdebe0b" path="res://UI/Time/time_ui.tscn" id="2_5atm4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_12skb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u24t0"]
 
@@ -10,6 +13,20 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 1080.0
 grow_horizontal = 2
+
+[node name="MenusPanel" type="Panel" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_12skb")
+
+[node name="MenusUI" parent="MenusPanel" instance=ExtResource("1_22aw8")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 200.0
+offset_right = 1920.0
+offset_bottom = 1280.0
 
 [node name="TileInfoUI" parent="." instance=ExtResource("1_0d8dj")]
 layout_mode = 2
