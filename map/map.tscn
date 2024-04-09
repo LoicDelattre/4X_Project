@@ -2,22 +2,24 @@
 
 [ext_resource type="Texture2D" uid="uid://bdawxpr3qxjp5" path="res://map/europe_map.png" id="1_pkjip"]
 [ext_resource type="Script" path="res://map/map.gd" id="2_gpxvq"]
-[ext_resource type="Script" path="res://map/Area.gd" id="3_3t433"]
+[ext_resource type="Script" path="res://map/ProvinceArea.gd" id="3_oy5oq"]
 
 [node name="map" type="NinePatchRect"]
 texture_filter = 1
 custom_minimum_size = Vector2(5400, 4800)
-offset_right = 5400.0
-offset_bottom = 4800.0
+offset_left = 1.0
+offset_top = -9.0
+offset_right = 5401.0
+offset_bottom = 4791.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_pkjip")
 script = ExtResource("2_gpxvq")
 
 [node name="France" type="Area2D" parent="."]
-script = ExtResource("3_3t433")
+script = ExtResource("3_oy5oq")
 
-[node name="Shape" type="Polygon2D" parent="France"]
-polygon = PackedVector2Array(874, 2690, 986, 2688, 1058, 2734, 1124, 2772, 1142, 2706, 1114, 2646, 1148, 2626, 1262, 2724, 1310, 2728, 1300, 2686, 1292, 2644, 1390, 2640, 1430, 2596, 1452, 2556, 1496, 2550, 1628, 2704, 1726, 2802, 1822, 2856, 1894, 2900, 1846, 2966, 1816, 3008, 1844, 3060, 1750, 3076, 1734, 3116, 1690, 3146, 1640, 3212, 1652, 3258, 1688, 3230, 1696, 3216, 1730, 3216, 1742, 3260, 1738, 3330, 1686, 3390, 1720, 3424, 1706, 3460, 1712, 3490, 1736, 3502, 1740, 3556, 1703.81, 3580.12, 1644, 3620, 1576, 3630, 1514, 3556, 1434, 3530, 1356, 3556, 1330, 3600, 1346, 3642, 1270, 3624, 1148, 3544, 1084, 3550, 1012, 3492, 968, 3414, 1052, 3168, 1054, 3030, 1026, 2986, 1046, 2924, 974, 2850, 868, 2782)
+[node name="ProvinceShape" type="Polygon2D" parent="France"]
+polygon = PackedVector2Array(858, 2708, 866, 2676, 920, 2678, 942, 2704, 984, 2682, 1024, 2722, 1028, 2742, 1048, 2738, 1050, 2730, 1076, 2730, 1124, 2772, 1142, 2706, 1120, 2684, 1114, 2646, 1140, 2624, 1162, 2618, 1182, 2634, 1262, 2724, 1310, 2728, 1312, 2710, 1288, 2680, 1292, 2644, 1390, 2640, 1430, 2596, 1452, 2556, 1496, 2550, 1628, 2704, 1726, 2802, 1822, 2856, 1894, 2900, 1846, 2966, 1816, 3008, 1844, 3060, 1750, 3076, 1734, 3116, 1690, 3146, 1640, 3212, 1652, 3258, 1688, 3230, 1696, 3216, 1730, 3216, 1742, 3260, 1738, 3330, 1686, 3390, 1720, 3424, 1706, 3460, 1712, 3490, 1736, 3502, 1740, 3556, 1703.81, 3580.12, 1644, 3620, 1576, 3630, 1514, 3556, 1434, 3530, 1356, 3556, 1330, 3600, 1346, 3642, 1270, 3624, 1148, 3544, 1084, 3550, 1012, 3492, 968, 3414, 1052, 3168, 1054, 3030, 1026, 2986, 1046, 2924, 974, 2850, 952, 2824, 930, 2814, 920, 2792, 882, 2794, 854, 2756, 886, 2752, 872, 2720)
 
-[node name="Collision" type="CollisionPolygon2D" parent="France"]
+[node name="ProvinceCollision" type="CollisionPolygon2D" parent="France"]
 position = Vector2(-10, 4)

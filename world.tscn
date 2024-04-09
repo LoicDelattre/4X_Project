@@ -21,3 +21,6 @@ limit_bottom = 2400
 script = ExtResource("4_7s3fl")
 
 [node name="map" parent="." instance=ExtResource("1_5j0m4")]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2

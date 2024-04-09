@@ -8,9 +8,9 @@ var collision:CollisionPolygon2D
 signal tileClicked
 
 func _ready():
-	shape = $Shape
+	shape = $ProvinceShape
 	shape.set_color(Color(0, 0, 0, 0))
-	collision = $Collision
+	collision = $ProvinceCollision
 	
 	collision.set_polygon(shape.get_polygon())
 	pass

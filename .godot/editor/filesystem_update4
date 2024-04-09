@@ -4,3 +4,4 @@ res://map/map.tscn
 res://UI/ui.tscn
 res://UI/TilesInfo/ui_tile_manpower_slot.tscn
 res://UI/Menus/menus_ui.tscn
+res://map/ProvinceArea.gd
