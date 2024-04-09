@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=3 uid="uid://b3im742u8chim"]
+
+[ext_resource type="PackedScene" uid="uid://bemw7177ualqi" path="res://UI/Menus/MenuWindow.tscn" id="1_xsxq6"]
+[ext_resource type="Texture2D" uid="uid://b6qyygdvbvcye" path="res://UI/Menus/Military/BackgroundRecruit.png" id="2_awme7"]
+[ext_resource type="Texture2D" uid="uid://dqb2itjjaf0xj" path="res://UI/Menus/Military/soldier.png" id="3_eywc6"]
+[ext_resource type="Texture2D" uid="uid://jh1ky3luuds6" path="res://UI/Resources/valid.png" id="4_67gx4"]
+[ext_resource type="FontFile" uid="uid://croa3d05fou6" path="res://Fonts/KELMSCOT.ttf" id="4_m06kf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7qhwy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wg7tw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pbghs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mw8dj"]
+
+[node name="Military" instance=ExtResource("1_xsxq6")]
+
+[node name="MenuLayout" parent="." index="0"]
+offset_right = 404.0
+offset_bottom = 120.0
+
+[node name="Title" parent="MenuLayout/TitleGroup" index="1"]
+text = "Military"
+
+[node name="Recruitment" type="VBoxContainer" parent="MenuLayout/Body" index="1"]
+custom_minimum_size = Vector2(356, 0)
+layout_mode = 2
+
+[node name="Bg" type="NinePatchRect" parent="MenuLayout/Body/Recruitment" index="0"]
+texture_filter = 1
+custom_minimum_size = Vector2(30, 50)
+layout_mode = 2
+texture = ExtResource("2_awme7")
+
+[node name="SoliderBar" type="HBoxContainer" parent="MenuLayout/Body/Recruitment/Bg" index="0"]
+layout_mode = 2
+offset_left = 15.0
+offset_top = 6.0
+offset_right = 341.0
+offset_bottom = 43.0
+
+[node name="VSeparator1" type="VSeparator" parent="MenuLayout/Body/Recruitment/Bg/SoliderBar" index="0"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_7qhwy")
+
+[node name="Panel" type="Panel" parent="MenuLayout/Body/Recruitment/Bg/SoliderBar" index="1"]
+layout_mode = 2
+
+[node name="SoldierIcon" type="NinePatchRect" parent="MenuLayout/Body/Recruitment/Bg/SoliderBar/Panel" index="0"]
+layout_mode = 2
+offset_right = 52.0
+offset_bottom = 66.0
+scale = Vector2(0.57, 0.57)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_eywc6")
+region_rect = Rect2(0, 0, 52, 66)
+
+[node name="VSeparator2" type="VSeparator" parent="MenuLayout/Body/Recruitment/Bg/SoliderBar" index="2"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_7qhwy")
+
+[node name="Characteristics" type="NinePatchRect" parent="MenuLayout/Body/Recruitment/Bg/SoliderBar" index="3"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MenuLayout/Body/Recruitment/Bg/SoliderBar/Characteristics" index="0"]
+layout_mode = 2
+offset_left = 13.0
+offset_top = 7.0
+offset_right = 4350.0
+offset_bottom = 489.0
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/font = ExtResource("4_m06kf")
+theme_override_font_sizes/font_size = 400
+text = "Blablabla Characteristics"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RecruitSoldier" type="Button" parent="MenuLayout/Body/Recruitment/Bg/SoliderBar" index="4"]
+custom_minimum_size = Vector2(40, 11)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wg7tw")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_pbghs")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mw8dj")
+
+[node name="Icon" type="NinePatchRect" parent="MenuLayout/Body/Recruitment/Bg/SoliderBar/RecruitSoldier" index="0"]
+custom_minimum_size = Vector2(12, 11)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 38.0
+texture = ExtResource("4_67gx4")
+
+[connection signal="pressed" from="MenuLayout/Body/Recruitment/Bg/SoliderBar/RecruitSoldier" to="." method="_on_recruit_soldier_pressed"]

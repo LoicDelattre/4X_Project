@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=3 uid="uid://wj6rgy1l7c2"]
+
+[ext_resource type="Script" path="res://UI/Menus/menus_ui.gd" id="1_7wr58"]
+[ext_resource type="Texture2D" uid="uid://ds0l1ovps6lh" path="res://UI/Resources/inventory-background.png" id="1_rst7n"]
+[ext_resource type="Texture2D" uid="uid://byspmd1yhm041" path="res://UI/Resources/inventory-slot.png" id="2_k54eq"]
+[ext_resource type="Texture2D" uid="uid://kmuj65sxauae" path="res://UI/Resources/military.png" id="3_bolp1"]
+[ext_resource type="PackedScene" uid="uid://b3im742u8chim" path="res://UI/Menus/Military/MilitaryMenu.tscn" id="5_s60ck"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_osbhv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6of6e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1w7hx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e6hfe"]
+
+[node name="MenusUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7wr58")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MenusBgPanel" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="MenusBg" type="NinePatchRect" parent="HBoxContainer/MenusBgPanel"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 750.0
+texture = ExtResource("1_rst7n")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Buttons" type="VBoxContainer" parent="HBoxContainer/MenusBgPanel/MenusBg"]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 426.0
+theme_override_constants/separation = 10
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/MenusBgPanel/MenusBg/Buttons"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_osbhv")
+
+[node name="Military" type="NinePatchRect" parent="HBoxContainer/MenusBgPanel/MenusBg/Buttons"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_k54eq")
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="MilitaryButton" type="Button" parent="HBoxContainer/MenusBgPanel/MenusBg/Buttons/Military"]
+layout_mode = 2
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 43.0
+offset_bottom = 43.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6of6e")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1w7hx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e6hfe")
+
+[node name="Icon" type="NinePatchRect" parent="HBoxContainer/MenusBgPanel/MenusBg/Buttons/Military/MilitaryButton"]
+texture_filter = 1
+custom_minimum_size = Vector2(12, 37)
+layout_mode = 0
+offset_left = 12.0
+offset_right = 24.0
+offset_bottom = 37.0
+texture = ExtResource("3_bolp1")
+region_rect = Rect2(0, 0, 12, 37)
+
+[node name="MilitaryPanel" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Military" parent="HBoxContainer/MilitaryPanel" instance=ExtResource("5_s60ck")]
+texture_filter = 0
+layout_mode = 0
+offset_left = 86.0
+offset_right = 490.0
+
+[connection signal="pressed" from="HBoxContainer/MenusBgPanel/MenusBg/Buttons/Military/MilitaryButton" to="." method="_on_military_button_pressed"]

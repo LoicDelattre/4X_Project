@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byspmd1yhm041"
-path="res://.godot/imported/inventory-slot.png-8d1ba478e3b152bd14f68ae568adff2c.ctex"
+uid="uid://dyqk838t8cf4d"
+path="res://.godot/imported/Archer.png-62d86fe67f8c34b7295bd94ea40054a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/TilesInfo/inventory-slot.png"
-dest_files=["res://.godot/imported/inventory-slot.png-8d1ba478e3b152bd14f68ae568adff2c.ctex"]
+source_file="res://UI/Menus/Military/Archer.png"
+dest_files=["res://.godot/imported/Archer.png-62d86fe67f8c34b7295bd94ea40054a8.ctex"]
 
 [params]
 

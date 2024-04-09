@@ -1,0 +1,106 @@
+[gd_scene load_steps=13 format=3 uid="uid://bemw7177ualqi"]
+
+[ext_resource type="Texture2D" uid="uid://ds0l1ovps6lh" path="res://UI/Resources/inventory-background.png" id="1_ncb7b"]
+[ext_resource type="Script" path="res://UI/Menus/Military/MilitaryMenu.gd" id="2_gmtrr"]
+[ext_resource type="FontFile" uid="uid://croa3d05fou6" path="res://Fonts/KELMSCOT.ttf" id="3_j2hr6"]
+[ext_resource type="Texture2D" uid="uid://brw3eui8xjk5q" path="res://UI/Resources/cross.png" id="4_vywfl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2jhcy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rbdne"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yqpjo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wig78"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kgga0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0q5ms"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n2l8n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gtwxq"]
+
+[node name="Menu" type="NinePatchRect"]
+texture_filter = 2
+offset_left = 90.0
+offset_right = 494.0
+offset_bottom = 750.0
+texture = ExtResource("1_ncb7b")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+script = ExtResource("2_gmtrr")
+
+[node name="MenuLayout" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleGroup" type="HBoxContainer" parent="MenuLayout"]
+layout_mode = 2
+
+[node name="VSeparator1" type="VSeparator" parent="MenuLayout/TitleGroup"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2jhcy")
+
+[node name="Title" type="Label" parent="MenuLayout/TitleGroup"]
+custom_minimum_size = Vector2(250, 78)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_j2hr6")
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="MenuLayout/TitleGroup"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2jhcy")
+
+[node name="Exit" type="VBoxContainer" parent="MenuLayout/TitleGroup"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="MenuLayout/TitleGroup/Exit"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_rbdne")
+
+[node name="ExitMenu" type="Button" parent="MenuLayout/TitleGroup/Exit"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yqpjo")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wig78")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kgga0")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MenuLayout/TitleGroup/Exit/ExitMenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_vywfl")
+
+[node name="HSeparator" type="HSeparator" parent="MenuLayout"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0q5ms")
+
+[node name="Body" type="HBoxContainer" parent="MenuLayout"]
+layout_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="MenuLayout/Body"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_n2l8n")
+
+[node name="VSeparator1" type="VSeparator" parent="MenuLayout/Body"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_gtwxq")
+
+[connection signal="pressed" from="MenuLayout/TitleGroup/Exit/ExitMenu" to="." method="_on_exit_menu_pressed"]

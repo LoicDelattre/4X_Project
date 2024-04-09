@@ -1,11 +1,2 @@
 res://default_env.tres
-res://world.tscn
-res://global.gd
-res://Nations/NationData.gd
-res://map/map.tscn
-res://UI/TilesInfo/tile_info_script.gd
-res://UI/TilesInfo/tile_info_ui.tscn
-res://UI/Time/speed.tscn
 res://UI/ui.tscn
-res://UI/Time/time_ui.tscn
-res://map/map.gd

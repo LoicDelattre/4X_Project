@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brw3eui8xjk5q"
-path="res://.godot/imported/cross.png-e0900db2e36955577b7c71ea292141f1.ctex"
+uid="uid://b6qyygdvbvcye"
+path="res://.godot/imported/BackgroundRecruit.png-10e7c0baac1821286ff082b96097d5fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/TilesInfo/cross.png"
-dest_files=["res://.godot/imported/cross.png-e0900db2e36955577b7c71ea292141f1.ctex"]
+source_file="res://UI/Menus/Military/BackgroundRecruit.png"
+dest_files=["res://.godot/imported/BackgroundRecruit.png-10e7c0baac1821286ff082b96097d5fd.ctex"]
 
 [params]
 
