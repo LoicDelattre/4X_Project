@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://3t6c5eoc0wrq" path="res://UI/TilesInfo/ui_tile_slot.tscn" id="1_up2h3"]
 [ext_resource type="Texture2D" uid="uid://d2m05x1co8pp3" path="res://UI/Resources/money.png" id="2_om5x3"]
 
-
 [node name="UITileSlot" instance=ExtResource("1_up2h3")]
 
 [node name="Icon" type="NinePatchRect" parent="." index="2"]

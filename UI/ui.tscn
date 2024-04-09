@@ -16,6 +16,7 @@ grow_horizontal = 2
 
 [node name="MenusPanel" type="Panel" parent="."]
 layout_mode = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_12skb")
 
 [node name="MenusUI" parent="MenusPanel" instance=ExtResource("1_22aw8")]
