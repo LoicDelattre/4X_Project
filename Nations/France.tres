@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="NationData" load_steps=2 format=3 uid="uid://cpcoar33w3a0f"]
-
-[ext_resource type="Script" path="res://Nations/NationData.gd" id="1_4iukr"]
-
-[resource]
-script = ExtResource("1_4iukr")
-nationID = 0
-baseMoney = 0

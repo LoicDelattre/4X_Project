@@ -2,12 +2,8 @@ extends Node
 
 @export_range(1,5) var gameSpeed : int = 3
 var gameIteration : int = 1
-var gameSpeedChange : bool = false
 
-var playerNationID : int = 0
-var nationsID : Array = ["Spectator", "Iceland", "Norway", "Sweden", "Finland", "Russia", "Ireland", "United Kingdom",
-						"Danemark", "Lithuania", "Latvia", "Estonia", "France", "Belgium", "Netherlands", "Germany", 
-						"Poland"]
+var gameSpeedChange : bool = false
 
 var overlayMapMode : int = 0
 var mapModes : Array = ["Countries", "Military"]

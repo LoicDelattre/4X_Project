@@ -1,4 +1,5 @@
 res://default_env.tres
+<<<<<<< HEAD
 res://map/map.tscn
 res://ProvincesData/TileData.gd
 res://UI/Time/time_ui.gd
@@ -18,3 +19,13 @@ res://UI/Menus/MilitaryMenu.tscn
 res://UI/Menus/MenuWindow.tscn
 res://UI/Menus/Military/MilitaryMenu.tscn
 res://UI/Menus/Military/MilitaryMenu.gd
+=======
+res://UI/Time/time_ui.tscn
+res://global.gd
+res://map/map.tscn
+res://UI/TilesInfo/tile_info_ui.tscn
+res://UI/Time/speed.tscn
+res://world.tscn
+res://UI/ui.tscn
+res://UI/Time/time_ui.gd
+>>>>>>> parent of 162cbbc (init NationData resource)
