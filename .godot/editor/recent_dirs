@@ -1,8 +1,9 @@
+res://
+res://map
+res://map/Regions
 <<<<<<< HEAD
 res://UI/Menus
-res://Nations
 =======
 >>>>>>> parent of 162cbbc (init NationData resource)
-res://
 res://UI/Time
 res://Fonts

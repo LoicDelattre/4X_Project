@@ -1,6 +1,8 @@
 res://default_env.tres
 res://world.tscn
-res://map/map.tscn
+res://map/RegionsMap.gd
 res://UI/ui.tscn
 res://UI/TilesInfo/ui_tile_manpower_slot.tscn
 res://UI/Menus/menus_ui.tscn
+res://map/Regions/region_area.tscn
+res://map/map.tscn
