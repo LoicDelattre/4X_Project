@@ -4,3 +4,5 @@
 
 [node name="RegionArea" type="Area2D"]
 script = ExtResource("1_pighu")
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]

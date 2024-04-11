@@ -1,8 +1,8 @@
+Panel
 Node2D
 Area2D
 Sprite2D
 TileMap
-Panel
 TextureRect
 VSeparator
 HBoxContainer
@@ -12,4 +12,3 @@ NinePatchRect
 Button
 Control
 Polygon2D
-CollisionPolygon2D

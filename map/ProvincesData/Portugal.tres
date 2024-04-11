@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TileCharacteristics" load_steps=2 format=3 uid="uid://0jyj1g4b2a4v"]
+
+[ext_resource type="Script" path="res://map/ProvincesData/TileData.gd" id="1_ic34p"]
+
+[resource]
+script = ExtResource("1_ic34p")
+manpower = 0
+baseTax = 0
+basePops = [0.0, 0.0, 0.0]
+genPopIncrease = 0.0
+tileID = 0
+color = Color(0.701961, 0.701961, 0.701961, 1)

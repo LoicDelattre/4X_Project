@@ -1,13 +1,12 @@
 extends Sprite2D
 
 var regionsDict : Dictionary = {
-	"#c4a000" : "United Kingdom",
-	"#d45500" : "France",
-	"#00007f" : "Ireland",
-	"#e2fe1d" : "Belgium",
-	"#75507b" : "Portugal",
-	"#e0f324" : "Spain"
+	"#2f3699" : "France",
+	"#22b14c" : "Portugal",
+	"#ffc20e" : "Spain"
 }
+
+var mapScale : Vector2 = Vector2(2,2)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,15 +34,30 @@ func loadRegions() -> void:
 		
 		for polygon in polygons:
 			var regionCollision : CollisionPolygon2D = CollisionPolygon2D.new()
-			regionCollision.name = "ProvinceCollision"
 			var regionShape : Polygon2D = Polygon2D.new()
+			var regionBorder : Line2D = Line2D.new()
+			var regionBorder2 : Curve2D = Curve2D.new()
+			
 			regionShape.name = "ProvinceShape"
 			
-			regionCollision.polygon = polygon
-			regionShape.polygon = polygon
+			regionBorder2.bake_interval = 0.1
+			regionBorder.default_color = Color(0, 0, 0, 0.9)
+			regionBorder.width = 5
 			
-			region.add_child(regionCollision)
-			region.add_child(regionShape)
+			for vector in polygon:
+				regionBorder2.add_point(vector)
+			regionBorder.points = regionBorder2.get_baked_points()
+			
+			regionBorder.points = polygon
+			regionBorder.scale = mapScale
+			region.add_child(regionBorder)
+			
+			var regionArray : Array = [regionCollision, regionShape]
+			
+			for item in regionArray:	
+				item.polygon = polygon
+				item.scale = mapScale
+				region.add_child(item)
 	pass
 
 func getPolygons(image : Image, pixelColorDict : Dictionary, regionColor : String):

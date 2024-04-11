@@ -76,8 +76,6 @@ func _process(delta) -> void:
 	
 	var newPosition:Vector2 = (keysMovement(delta) + mouseMovement(delta))/2
 	
-	
-	
 	#maitain position vector inside the camera limits
 	position = boundPosition(newPosition)
 	

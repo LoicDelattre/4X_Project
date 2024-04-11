@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="NationData" load_steps=2 format=3 uid="uid://cpcoar33w3a0f"]
 
-[ext_resource type="Script" path="res://UI/Resources/Nations/NationData.gd" id="1_4iukr"]
+[ext_resource type="Script" path="res://Nations/NationData.gd" id="1_4iukr"]
+
 
 
 [resource]
