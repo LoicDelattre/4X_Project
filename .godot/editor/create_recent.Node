@@ -1,7 +1,9 @@
+CollisionShape2D
+Area2D
+AnimatedSprite2D
+Sprite2D
 Panel
 Node2D
-Area2D
-Sprite2D
 TileMap
 TextureRect
 VSeparator
@@ -10,5 +12,3 @@ Label
 VBoxContainer
 NinePatchRect
 Button
-Control
-Polygon2D

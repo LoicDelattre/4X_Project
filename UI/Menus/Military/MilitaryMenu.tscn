@@ -69,13 +69,13 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MenuLayout/Body/Recruitment/Bg/SoliderBar/Characteristics" index="0"]
 layout_mode = 2
 offset_left = 13.0
-offset_top = 7.0
+offset_top = 5.0
 offset_right = 4350.0
-offset_bottom = 489.0
+offset_bottom = 608.0
 scale = Vector2(0.05, 0.05)
 theme_override_fonts/font = ExtResource("4_m06kf")
-theme_override_font_sizes/font_size = 400
-text = "Blablabla Characteristics"
+theme_override_font_sizes/font_size = 500
+text = "Raise Armies"
 horizontal_alignment = 1
 vertical_alignment = 1
 
