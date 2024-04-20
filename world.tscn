@@ -9,9 +9,9 @@
 [node name="World" type="Node2D"]
 script = ExtResource("1_sxqqh")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayerUI" type="CanvasLayer" parent="."]
 
-[node name="UI" parent="CanvasLayer" instance=ExtResource("4_q5soa")]
+[node name="UI" parent="CanvasLayerUI" instance=ExtResource("4_q5soa")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1000, 1000)
@@ -29,5 +29,7 @@ texture = ExtResource("5_u1cnb")
 script = ExtResource("5_id3nc")
 
 [node name="Regions" type="Node2D" parent="."]
+
+[node name="Sprites" type="Node2D" parent="."]
 
 [connection signal="child_entered_tree" from="Regions" to="." method="_on_regions_child_entered_tree"]

@@ -37,6 +37,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 90.0
 offset_bottom = 750.0
+mouse_filter = 0
 texture = ExtResource("1_rst7n")
 patch_margin_left = 10
 patch_margin_top = 10
@@ -51,6 +52,7 @@ theme_override_constants/separation = 10
 
 [node name="HSeparator" type="HSeparator" parent="HBoxContainer/MenusBgPanel/MenusBg/Buttons"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_osbhv")
 
 [node name="Military" type="NinePatchRect" parent="HBoxContainer/MenusBgPanel/MenusBg/Buttons"]
@@ -69,6 +71,7 @@ offset_right = 43.0
 offset_bottom = 43.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxEmpty_6of6e")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_1w7hx")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_e6hfe")
@@ -92,4 +95,6 @@ layout_mode = 0
 offset_left = 86.0
 offset_right = 490.0
 
+[connection signal="mouse_entered" from="HBoxContainer/MenusBgPanel/MenusBg" to="." method="_on_menus_bg_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/MenusBgPanel/MenusBg" to="." method="_on_menus_bg_mouse_exited"]
 [connection signal="pressed" from="HBoxContainer/MenusBgPanel/MenusBg/Buttons/Military/MilitaryButton" to="." method="_on_military_button_pressed"]

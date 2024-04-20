@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://7geiqdbss1f2"]
+
+[ext_resource type="Texture2D" uid="uid://dqb2itjjaf0xj" path="res://UI/Menus/Military/soldier.png" id="1_kco16"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_daw4t"]
+radius = 19.0
+height = 64.0
+
+[node name="ArmyStatic" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_kco16")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4, 7)
+shape = SubResource("CapsuleShape2D_daw4t")

@@ -44,6 +44,7 @@ layout_mode = 2
 [node name="VSeparator1" type="VSeparator" parent="MenuLayout/TitleGroup"]
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 0
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2jhcy")
 
@@ -58,6 +59,7 @@ vertical_alignment = 1
 [node name="VSeparator2" type="VSeparator" parent="MenuLayout/TitleGroup"]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 0
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2jhcy")
 
@@ -67,11 +69,13 @@ layout_mode = 2
 [node name="HSeparator" type="HSeparator" parent="MenuLayout/TitleGroup/Exit"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
+mouse_filter = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_rbdne")
 
 [node name="ExitMenu" type="Button" parent="MenuLayout/TitleGroup/Exit"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yqpjo")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_wig78")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_kgga0")
@@ -88,6 +92,7 @@ texture = ExtResource("4_vywfl")
 
 [node name="HSeparator" type="HSeparator" parent="MenuLayout"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_0q5ms")
 
 [node name="Body" type="HBoxContainer" parent="MenuLayout"]
@@ -96,11 +101,13 @@ layout_mode = 2
 [node name="VSeparator2" type="VSeparator" parent="MenuLayout/Body"]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
+mouse_filter = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_n2l8n")
 
 [node name="VSeparator1" type="VSeparator" parent="MenuLayout/Body"]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
+mouse_filter = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_gtwxq")
 
 [connection signal="pressed" from="MenuLayout/TitleGroup/Exit/ExitMenu" to="." method="_on_exit_menu_pressed"]

@@ -8,6 +8,14 @@ var gameSpeedChange : bool = false
 var overlayMapMode : int = 0
 var mapModes : Array = ["Countries", "Military"]
 
+var regionsDict : Dictionary = {
+	"#2f3699" : ["France", [0,0]],
+	"#22b14c" : ["Portugal", [0,0]],
+	"#ffc20e" : ["Spain", [0,0]]
+}
+
+var playerNation : String = "#2f3699"
+
 signal simulationUpdate
 signal gameSpeedChanged
 

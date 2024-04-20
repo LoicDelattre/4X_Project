@@ -6,6 +6,8 @@ extends Control
 
 signal newMonth
 signal newYear
+signal mouseInTimeUI
+signal mouseLeftTimeUI
 
 var gameSpeedsTitles : Array = ["Slowest", "Slow", "Normal", "Fast", "Fastest"]
 var months : Array = ["January", "February", "March", "April", "May", "June", "July", "August", 
@@ -95,4 +97,14 @@ func _on_fastest_pressed() -> void:
 	gameSpeed = 5
 	globalNode.set_gameSpeed(gameSpeed)
 	setLabelText()
+	pass # Replace with function body.
+
+
+func _on_background_mouse_entered():
+	emit_signal("mouseInTimeUI")
+	pass # Replace with function body.
+
+
+func _on_background_mouse_exited():
+	emit_signal("mouseLeftTimeUI")
 	pass # Replace with function body.

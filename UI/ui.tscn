@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dla2com36m6m6"]
+[gd_scene load_steps=7 format=3 uid="uid://dla2com36m6m6"]
 
 [ext_resource type="PackedScene" uid="uid://cop7fqpefcwff" path="res://UI/TilesInfo/tile_info_ui.tscn" id="1_0d8dj"]
 [ext_resource type="PackedScene" uid="uid://wj6rgy1l7c2" path="res://UI/Menus/menus_ui.tscn" id="1_22aw8"]
+[ext_resource type="Script" path="res://UI/ui.gd" id="1_e5hha"]
 [ext_resource type="PackedScene" uid="uid://cp27i3xdebe0b" path="res://UI/Time/time_ui.tscn" id="2_5atm4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_12skb"]
@@ -13,6 +14,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 1080.0
 grow_horizontal = 2
+script = ExtResource("1_e5hha")
 
 [node name="MenusPanel" type="Panel" parent="."]
 layout_mode = 2
@@ -33,12 +35,12 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 
-[node name="Panel" type="Panel" parent="."]
+[node name="TimePanel" type="Panel" parent="."]
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_u24t0")
 
-[node name="TimeUI" parent="Panel" instance=ExtResource("2_5atm4")]
+[node name="TimeUI" parent="TimePanel" instance=ExtResource("2_5atm4")]
 layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0

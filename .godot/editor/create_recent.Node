@@ -1,9 +1,9 @@
+Node2D
+Sprite2D
 CollisionShape2D
 Area2D
 AnimatedSprite2D
-Sprite2D
 Panel
-Node2D
 TileMap
 TextureRect
 VSeparator

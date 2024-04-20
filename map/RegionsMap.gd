@@ -1,10 +1,6 @@
 extends Sprite2D
 
-var regionsDict : Dictionary = {
-	"#2f3699" : "France",
-	"#22b14c" : "Portugal",
-	"#ffc20e" : "Spain"
-}
+@onready var globals = get_node("/root/Global")
 
 var mapScale : Vector2 = Vector2(2,2)
 
@@ -24,9 +20,9 @@ func loadRegions() -> void:
 				pixelColorDict[pixelColor] = []
 			pixelColorDict[pixelColor].append(Vector2(x,y))
 	
-	for regionColor in regionsDict:
+	for regionColor in globals.regionsDict:
 		var region : Area2D = load("res://map/Regions/region_area.tscn").instantiate()
-		region.regionName = regionsDict[regionColor]
+		region.regionName = globals.regionsDict[regionColor][0]
 		region.set_name(region.regionName)
 		get_node("/root/World/Regions").add_child(region)
 		
@@ -37,28 +33,57 @@ func loadRegions() -> void:
 			var regionShape : Polygon2D = Polygon2D.new()
 			var regionBorder : Line2D = Line2D.new()
 			var regionBorder2 : Curve2D = Curve2D.new()
+			var polygonCenter : Vector2 = Vector2(0,0)
 			
 			regionShape.name = "ProvinceShape"
 			
-			regionBorder2.bake_interval = 0.1
-			regionBorder.default_color = Color(0, 0, 0, 0.9)
-			regionBorder.width = 5
-			
-			for vector in polygon:
-				regionBorder2.add_point(vector)
-			regionBorder.points = regionBorder2.get_baked_points()
-			
-			regionBorder.points = polygon
-			regionBorder.scale = mapScale
+			regionBorder = getBorder(regionBorder, regionBorder2, polygon)
 			region.add_child(regionBorder)
 			
-			var regionArray : Array = [regionCollision, regionShape]
+			polygonCenter = getPolygonCenter(polygon)
+			globals.regionsDict[regionColor][1][0] = polygonCenter.x
+			globals.regionsDict[regionColor][1][1] = polygonCenter.y
 			
+			var regionArray : Array = [regionCollision, regionShape]
 			for item in regionArray:	
 				item.polygon = polygon
 				item.scale = mapScale
 				region.add_child(item)
 	pass
+
+func getPolygonCenter(polygon: PackedVector2Array):
+	var polygonCenter : Vector2 = Vector2(0,0)
+	var max : Vector2 = Vector2(0,0)
+	var min : Vector2 = Vector2(1000000,1000000)
+	
+	for vector in polygon:
+		if vector.x > max.x:
+			max.x = vector.x
+		elif vector.x < min.x:
+			min.x = vector.x
+			
+		if vector.y > max.y:
+			max.y = vector.y
+		elif vector.y < min.y:
+			min.y = vector.y
+			
+	polygonCenter = ((max - min)/2 + min)*mapScale
+	
+	return polygonCenter
+
+func getBorder(regionBorder : Line2D, regionBorder2 : Curve2D, polygon : PackedVector2Array):
+	regionBorder2.bake_interval = 0.1
+	regionBorder.default_color = Color(0, 0, 0, 0.9)
+	regionBorder.width = 5
+			
+	for vector in polygon:
+		regionBorder2.add_point(vector)
+		regionBorder.points = regionBorder2.get_baked_points()
+			
+		regionBorder.points = polygon
+		regionBorder.scale = mapScale
+		
+	return regionBorder
 
 func getPolygons(image : Image, pixelColorDict : Dictionary, regionColor : String):
 	var targetImage = Image.create(image.get_size().x,image.get_size().y, false, Image.FORMAT_RGBA8)
