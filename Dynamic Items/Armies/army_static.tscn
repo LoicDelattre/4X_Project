@@ -18,5 +18,12 @@ script = ExtResource("2_krm0r")
 position = Vector2(-4, 7)
 shape = SubResource("CapsuleShape2D_daw4t")
 
+[node name="NinePatchRect" type="NinePatchRect" parent="Contour"]
+offset_left = -25.0
+offset_top = -11.0
+offset_right = 25.0
+offset_bottom = 34.0
+mouse_filter = 0
+
 [connection signal="mouse_entered" from="Contour" to="." method="_on_contour_mouse_entered"]
 [connection signal="mouse_exited" from="Contour" to="." method="_on_contour_mouse_exited"]
