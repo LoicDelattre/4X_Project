@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b11womuovda4d"]
+
+[ext_resource type="Script" path="res://Nations/NationSprites.gd" id="1_l5s2e"]
+
+[node name="NationSprites" type="Node2D"]
+script = ExtResource("1_l5s2e")
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]

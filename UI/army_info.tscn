@@ -1,0 +1,154 @@
+[gd_scene load_steps=17 format=3 uid="uid://bdt6sncbbfopf"]
+
+[ext_resource type="Texture2D" uid="uid://ds0l1ovps6lh" path="res://UI/Resources/inventory-background.png" id="1_ckid4"]
+[ext_resource type="Script" path="res://UI/army_info.gd" id="1_n0vi3"]
+[ext_resource type="FontFile" uid="uid://croa3d05fou6" path="res://Fonts/KELMSCOT.ttf" id="2_0mh43"]
+[ext_resource type="Texture2D" uid="uid://brw3eui8xjk5q" path="res://UI/Resources/cross.png" id="3_1ulnn"]
+[ext_resource type="PackedScene" uid="uid://ukqolt01gw13" path="res://UI/TilesInfo/ui_tile_tax_slot.tscn" id="4_axva8"]
+[ext_resource type="PackedScene" uid="uid://c3vvc7g1p5kje" path="res://UI/TilesInfo/ui_tile_manpower_slot.tscn" id="5_odh8g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s43ea"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2h1dx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ytr1c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_slqcx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0yotl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i4vgr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6donx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_02co2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ryfh6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_66ncd"]
+
+[node name="ArmyInfo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n0vi3")
+
+[node name="Background" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+offset_left = -300.0
+offset_top = -392.0
+offset_right = 300.0
+texture = ExtResource("1_ckid4")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="InfoLayout" type="VBoxContainer" parent="Background"]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 164.0
+
+[node name="TitleGroup" type="HBoxContainer" parent="Background/InfoLayout"]
+layout_mode = 2
+
+[node name="VSeparator1" type="VSeparator" parent="Background/InfoLayout/TitleGroup"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = -20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_s43ea")
+
+[node name="Panel" type="Panel" parent="Background/InfoLayout/TitleGroup"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2h1dx")
+
+[node name="Title" type="Label" parent="Background/InfoLayout/TitleGroup/Panel"]
+custom_minimum_size = Vector2(250, 78)
+layout_mode = 2
+offset_left = 4.0
+offset_right = 4897.0
+offset_bottom = 1325.0
+scale = Vector2(0.05, 0.05)
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("2_0mh43")
+theme_override_font_sizes/font_size = 1100
+text = "Army Info
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="Background/InfoLayout/TitleGroup"]
+custom_minimum_size = Vector2(135, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_s43ea")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/InfoLayout/TitleGroup"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="Background/InfoLayout/TitleGroup/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ytr1c")
+
+[node name="ExitButton" type="Button" parent="Background/InfoLayout/TitleGroup/VBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxEmpty_slqcx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0yotl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i4vgr")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Background/InfoLayout/TitleGroup/VBoxContainer/ExitButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_1ulnn")
+
+[node name="HSeparator" type="HSeparator" parent="Background/InfoLayout"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_6donx")
+
+[node name="Main Stats" type="HBoxContainer" parent="Background/InfoLayout"]
+layout_mode = 2
+
+[node name="VSeparator1" type="VSeparator" parent="Background/InfoLayout/Main Stats"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_02co2")
+
+[node name="Manpower" parent="Background/InfoLayout/Main Stats" instance=ExtResource("4_axva8")]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VSeparator3" type="VSeparator" parent="Background/InfoLayout/Main Stats"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ryfh6")
+
+[node name="Tax" parent="Background/InfoLayout/Main Stats" instance=ExtResource("5_odh8g")]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VSeparator2" type="VSeparator" parent="Background/InfoLayout/Main Stats"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_66ncd")
+
+[connection signal="pressed" from="Background/InfoLayout/TitleGroup/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

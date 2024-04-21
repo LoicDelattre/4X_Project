@@ -53,21 +53,27 @@ func loadRegions() -> void:
 
 func getPolygonCenter(polygon: PackedVector2Array):
 	var polygonCenter : Vector2 = Vector2(0,0)
-	var max : Vector2 = Vector2(0,0)
-	var min : Vector2 = Vector2(1000000,1000000)
+	var top : Vector2 = polygon[0]
+	var bottom: Vector2 = polygon[0]
+	var right : Vector2 = polygon[0]
+	var left : Vector2 = polygon[0]
 	
 	for vector in polygon:
-		if vector.x > max.x:
-			max.x = vector.x
-		elif vector.x < min.x:
-			min.x = vector.x
+		if vector.x > right.x:
+			right = vector
+		if vector.x < left.x:
+			left = vector	
+		if vector.y > top.y:
+			top = vector
+		if vector.y < bottom.y:
+			bottom = vector
 			
-		if vector.y > max.y:
-			max.y = vector.y
-		elif vector.y < min.y:
-			min.y = vector.y
-			
-	polygonCenter = ((max - min)/2 + min)*mapScale
+	var topR : Vector2 = Vector2(right.x, top.y)		
+	var topL : Vector2 = Vector2(left.x, top.y)
+	var bottomR : Vector2 = Vector2(right.x, bottom.y)		
+	var bottomL : Vector2 = Vector2(left.x, bottom.y)
+	
+	polygonCenter = (topR + topL + bottomR + bottomL)/4*mapScale
 	
 	return polygonCenter
 

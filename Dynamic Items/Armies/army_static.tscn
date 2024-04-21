@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://7geiqdbss1f2"]
+[gd_scene load_steps=4 format=3 uid="uid://7geiqdbss1f2"]
 
 [ext_resource type="Texture2D" uid="uid://dqb2itjjaf0xj" path="res://UI/Menus/Military/soldier.png" id="1_kco16"]
+[ext_resource type="Script" path="res://Dynamic Items/Armies/army.gd" id="2_krm0r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_daw4t"]
 radius = 19.0
@@ -9,9 +10,13 @@ height = 64.0
 [node name="ArmyStatic" type="Sprite2D"]
 texture_filter = 1
 texture = ExtResource("1_kco16")
+script = ExtResource("2_krm0r")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Contour" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="Collision" type="CollisionShape2D" parent="Contour"]
 position = Vector2(-4, 7)
 shape = SubResource("CapsuleShape2D_daw4t")
+
+[connection signal="mouse_entered" from="Contour" to="." method="_on_contour_mouse_entered"]
+[connection signal="mouse_exited" from="Contour" to="." method="_on_contour_mouse_exited"]

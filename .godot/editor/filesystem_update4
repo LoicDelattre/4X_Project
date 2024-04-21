@@ -1,12 +1,21 @@
 res://default_env.tres
-res://UI/Menus/Military/MilitaryMenu.tscn
+res://UI/Menus/menus_ui.tscn
+res://map/RegionsMap.gd
 res://world.tscn
 res://UI/ui.tscn
 res://UI/TilesInfo/tile_info_ui.tscn
-res://UI/Menus/menus_ui.tscn
+res://UI/Menus/Military/MilitaryMenu.tscn
 res://UI/Time/time_ui.tscn
-res://UI/Menus/MenuWindow.tscn
-res://UI/TilesInfo/tile_info_script.gd
-res://map/Regions/RegionArea.gd
-res://UI/Menus/menus_ui.gd
 res://UI/ui.gd
+res://world.gd
+res://UI/Menus/Military/MilitaryMenu.gd
+res://map/Regions/RegionArea.gd
+res://Dynamic Items/Armies/army_static.tscn
+res://Dynamic Items/Armies/army.gd
+res://Nations/NationData.gd
+res://UI/army_info.tscn
+res://UI/army_info.gd
+res://Nations/NationSprites.tscn
+res://Nations/NationSprites.gd
+res://UI/TilesInfo/ui_tile_tax_slot.tscn
+res://Nations/France.tres

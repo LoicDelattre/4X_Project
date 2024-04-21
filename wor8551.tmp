@@ -1,25 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4iviliuoeg2e"]
+[gd_scene load_steps=6 format=3 uid="uid://c4iviliuoeg2e"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_sxqqh"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="4_7s3fl"]
 [ext_resource type="PackedScene" uid="uid://dla2com36m6m6" path="res://UI/ui.tscn" id="4_q5soa"]
 [ext_resource type="Script" path="res://map/RegionsMap.gd" id="5_id3nc"]
 [ext_resource type="Texture2D" uid="uid://cg0j48on7y1ml" path="res://map/test_map.png" id="5_u1cnb"]
-
-[sub_resource type="GDScript" id="GDScript_t47k2"]
-script/source = "extends Node2D
-
-signal spriteA
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_sxqqh")
@@ -46,7 +31,5 @@ script = ExtResource("5_id3nc")
 [node name="Regions" type="Node2D" parent="."]
 
 [node name="Sprites" type="Node2D" parent="."]
-script = SubResource("GDScript_t47k2")
 
 [connection signal="child_entered_tree" from="Regions" to="." method="_on_regions_child_entered_tree"]
-[connection signal="child_entered_tree" from="Sprites" to="CanvasLayerUI/UI" method="_on_sprites_child_entered_tree"]

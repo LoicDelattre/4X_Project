@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dla2com36m6m6"]
+[gd_scene load_steps=8 format=3 uid="uid://dla2com36m6m6"]
 
 [ext_resource type="PackedScene" uid="uid://cop7fqpefcwff" path="res://UI/TilesInfo/tile_info_ui.tscn" id="1_0d8dj"]
 [ext_resource type="PackedScene" uid="uid://wj6rgy1l7c2" path="res://UI/Menus/menus_ui.tscn" id="1_22aw8"]
 [ext_resource type="Script" path="res://UI/ui.gd" id="1_e5hha"]
 [ext_resource type="PackedScene" uid="uid://cp27i3xdebe0b" path="res://UI/Time/time_ui.tscn" id="2_5atm4"]
+[ext_resource type="PackedScene" uid="uid://bdt6sncbbfopf" path="res://UI/army_info.tscn" id="5_0mvhf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_12skb"]
 
@@ -51,3 +52,8 @@ offset_bottom = 124.0
 scale = Vector2(1.4, 1.4)
 size_flags_horizontal = 8
 mouse_filter = 2
+
+[node name="ArmyInfo" parent="." instance=ExtResource("5_0mvhf")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
