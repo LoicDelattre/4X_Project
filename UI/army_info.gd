@@ -8,6 +8,9 @@ var soldiersAmount : int = 0
 var archersAmount : int = 0
 var cavalryAmount : int = 0
 
+signal mouseInArmyInfoUI
+signal mouseLeftArmyInfoUI
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	close()
@@ -32,4 +35,14 @@ func close() -> void:
 
 func _on_exit_button_pressed() -> void:
 	close()
+	pass # Replace with function body.
+	
+
+func _on_background_mouse_entered() -> void:
+	emit_signal("mouseInArmyInfoUI")
+	pass # Replace with function body.
+
+
+func _on_background_mouse_exited() -> void:
+	emit_signal("mouseLeftArmyInfoUI")
 	pass # Replace with function body.

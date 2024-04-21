@@ -39,9 +39,11 @@ script = ExtResource("1_n0vi3")
 [node name="Background" type="NinePatchRect" parent="."]
 texture_filter = 1
 layout_mode = 1
+anchors_preset = -1
 offset_left = -300.0
 offset_top = -392.0
 offset_right = 300.0
+mouse_filter = 0
 texture = ExtResource("1_ckid4")
 patch_margin_left = 5
 patch_margin_top = 5
@@ -151,4 +153,6 @@ layout_mode = 2
 mouse_filter = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_66ncd")
 
+[connection signal="mouse_entered" from="Background" to="." method="_on_background_mouse_entered"]
+[connection signal="mouse_exited" from="Background" to="." method="_on_background_mouse_exited"]
 [connection signal="pressed" from="Background/InfoLayout/TitleGroup/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

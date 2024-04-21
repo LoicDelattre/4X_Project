@@ -44,5 +44,6 @@ func _on_contour_mouse_entered() -> void:
 	pass # Replace with function body.
 
 func _on_contour_mouse_exited() -> void:
+	mouseOnSprite = false
 	emit_signal("mouseLeftSprite")
 	pass # Replace with function body.

@@ -9,6 +9,7 @@ var isMouseInMenuUI : bool = false
 var isMouseInTimeUI : bool = false
 var isMouseInTileInfoUI : bool = false
 var isMouseOnSprite : bool = false
+var isMouseInArmyInfoUI : bool = false
 
 signal mouseEnteredUI
 signal mouseLeftUI
@@ -25,6 +26,9 @@ func _ready():
 	
 	tileInfoNode.connect("mouseInTileInfoUI", _on_mouse_enter_tileUI)
 	tileInfoNode.connect("mouseLeftTileInfoUI", _on_mouse_left_tileUI)
+	
+	armyInfoNode.connect("mouseInArmyInfoUI", _on_mouse_enter_armyUI)
+	armyInfoNode.connect("mouseLeftArmyInfoUI", _on_mouse_left_armyUI)
 	
 	pass # Replace with function body.
 
@@ -57,14 +61,23 @@ func _on_mouse_left_tileUI():
 	isMouseInTileInfoUI = false
 	_on_mouse_left_UI()
 	pass
+	
+func _on_mouse_enter_armyUI():
+	emit_signal("mouseEnteredUI")
+	isMouseInArmyInfoUI = true
+	pass
+	
+func _on_mouse_left_armyUI():
+	isMouseInArmyInfoUI = false
+	_on_mouse_left_UI()
+	pass
 
 func _on_mouse_left_UI():
-	if !isMouseInMenuUI and !isMouseInTimeUI and !isMouseInTileInfoUI:
+	if !isMouseInMenuUI and !isMouseInTimeUI and !isMouseInTileInfoUI and !isMouseInArmyInfoUI:
 		emit_signal("mouseLeftUI")
 	pass
  
 func _on_sprite_clicked(spriteType : String, spriteData : Array) -> void:
-	print("hi")
 	if spriteType == "army":
 		armyInfoNode.open(spriteData)
 	pass
