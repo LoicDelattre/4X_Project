@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var nodeUI = get_node("/root/World/CanvasLayerUI/UI")
+@onready var spritesNode : Node2D = get_node("/root/World/Sprites")
 @onready var globals = get_node("/root/Global")
 
 var regionName : String = ""
@@ -19,8 +20,8 @@ signal tileClicked
 func _ready() -> void:
 	nodeUI.connect("mouseEnteredUI", _mouse_in_UI)
 	nodeUI.connect("mouseLeftUI", _mouse_left_UI)
-	nodeUI.connect("mouseOnSprite", _mouse_in_UI)
-	nodeUI.connect("mouseLeftSprite", _mouse_left_UI)
+	spritesNode.connect("mouseOnSprite", _mouse_in_UI)
+	spritesNode.connect("mouseLeftSprite", _mouse_left_UI)
 	pass
 
 func _mouse_on_sprite() -> void:
@@ -48,6 +49,7 @@ func _mouse_left_UI() -> void:
 	pass
 
 func _mouse_in_UI() -> void:
+	print("hi")
 	if globals.curProvinceHovered == regionName:
 		shape.set_color(baseColor)
 		mouseInUI = true
@@ -67,7 +69,7 @@ func _input(event : InputEvent) -> void:
 		emit_signal("tileClicked", regionName)
 		#open tile info screen
 		
-func process(delta : float) -> void:
+func process(_delta : float) -> void:
 	if mouseInTile and globals.curProvinceHovered != regionName:
 		globals.curProvinceHovered = regionName
 	pass

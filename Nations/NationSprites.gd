@@ -2,6 +2,7 @@ extends Node2D
 
 signal spriteAdded
 signal spriteClicked
+signal spriteDoubleClicked
 signal mouseOnSprite
 signal mouseLeftSprite
 
@@ -25,8 +26,13 @@ func on_mouse_left_sprite() -> void:
 	emit_signal("mouseLeftSprite")
 	pass
 
+func on_sprite_double_clicked(spriteType: String) -> void:
+	emit_signal("spriteDoubleClicked", spriteType)
+	pass
+
 func _on_child_entered_tree(node: Node) -> void:
 	if node.is_class("Sprite2D"):
+		node.connect("spriteDoubleClicked", on_sprite_double_clicked)
 		node.connect("spriteClicked", on_sprite_clicked)
 		node.connect("mouseInSprite", on_mouse_entered_sprite)
 		node.connect("mouseLeftSprite", on_mouse_left_sprite)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqb2itjjaf0xj"
-path="res://.godot/imported/soldier.png-c58a3a9490881d9d44d434786f1003ae.ctex"
+uid="uid://dyqk838t8cf4d"
+path="res://.godot/imported/Archer.png-270b56e1554a8c474244cda1d31e6a89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Menus/Military/soldier.png"
-dest_files=["res://.godot/imported/soldier.png-c58a3a9490881d9d44d434786f1003ae.ctex"]
+source_file="res://UI/Resources/Archer.png"
+dest_files=["res://.godot/imported/Archer.png-270b56e1554a8c474244cda1d31e6a89.ctex"]
 
 [params]
 

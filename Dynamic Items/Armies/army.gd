@@ -11,18 +11,27 @@ var generalName : String = ""
 var armyData : Array = []
 
 var mouseOnSprite : bool = false
+var spriteSelected : bool = false
 
+@onready var armyInfoNode : Control = get_node("/root/World/CanvasLayerUI/UI/ArmyInfo")
 @onready var shadowNode : Polygon2D = $Shadow
+@onready var contourNode : Sprite2D = $Selected
 
 signal spriteClicked
+signal spriteDoubleClicked
 signal mouseInSprite
 signal mouseLeftSprite
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	shadowNode.visible = false
+	contourNode.visible = false
+	
+	armyInfoNode.connect("infoTabClosed", unselect)
+	
 	loadData()
 	pass # Replace with function body.
+
 
 func loadData() -> void:
 	var armyComp : Array = armyData[0]
@@ -34,12 +43,23 @@ func loadData() -> void:
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	
 func _input(event : InputEvent) -> void:
 	if event is InputEventMouseButton and mouseOnSprite and event.is_action_pressed("left_click"):
-		emit_signal("spriteClicked", "army", armyData)
+		if !spriteSelected:
+			emit_signal("spriteClicked", "army", armyData)
+			contourNode.visible = true
+			spriteSelected = true
+		else:
+			emit_signal("spriteDoubleClicked", "army")
+			unselect()
+			
+func unselect() -> void:
+	spriteSelected = false
+	contourNode.visible = false		
+	pass
 
 func _on_contour_mouse_entered() -> void:
 	mouseOnSprite = true

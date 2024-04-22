@@ -13,8 +13,6 @@ var isMouseInArmyInfoUI : bool = false
 
 signal mouseEnteredUI
 signal mouseLeftUI
-signal mouseOnSprite
-signal mouseLeftSprite
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -76,27 +74,24 @@ func _on_mouse_left_UI():
 	if !isMouseInMenuUI and !isMouseInTimeUI and !isMouseInTileInfoUI and !isMouseInArmyInfoUI:
 		emit_signal("mouseLeftUI")
 	pass
- 
-func _on_sprite_clicked(spriteType : String, spriteData : Array) -> void:
-	if spriteType == "army":
-		armyInfoNode.open(spriteData)
-	pass
-	
-func _on_mouse_enter_sprite():
-	emit_signal("mouseOnSprite")
-	pass
-	
-func _on_mouse_left_sprite():
-	emit_signal("mouseLeftSprite")
-	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func _on_sprites_child_entered_tree(node: Node) -> void:
 	if node.is_class("Node2D"):
 		node.connect("spriteClicked", _on_sprite_clicked)
-		node.connect("mouseOnSprite", _on_mouse_enter_sprite)
-		node.connect("mouseLeftSprite", _on_mouse_left_sprite)
+		node.connect("spriteDoubleClicked", on_sprite_double_clicked)
 	pass # Replace with function body.
+	
+func _on_sprite_clicked(spriteType : String, spriteData : Array) -> void:
+	if spriteType == "army":
+		armyInfoNode.open(spriteData)
+	pass
+
+func on_sprite_double_clicked(spriteType : String) -> void:
+	if spriteType == "army":
+		armyInfoNode.close(true)
+	pass
+
