@@ -49,7 +49,6 @@ func _mouse_left_UI() -> void:
 	pass
 
 func _mouse_in_UI() -> void:
-	print("hi")
 	if globals.curProvinceHovered == regionName:
 		shape.set_color(baseColor)
 		mouseInUI = true
