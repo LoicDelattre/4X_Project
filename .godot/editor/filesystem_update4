@@ -1,8 +1,12 @@
 res://default_env.tres
-res://world.tscn
+res://Dynamic Items/Armies/army_static.tscn
 res://Nations/NationData.gd
+res://map/Regions/RegionArea.gd
+res://global.gd
+res://world.tscn
 res://UI/ui.tscn
 res://UI/TilesInfo/tile_info_ui.tscn
 res://Nations/NationSprites.tscn
-res://Dynamic Items/Armies/army_static.tscn
 res://UI/army_info.tscn
+res://Dynamic Items/Armies/army.gd
+res://UI/TilesInfo/tile_info_script.gd

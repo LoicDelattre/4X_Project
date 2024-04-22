@@ -35,7 +35,7 @@ func close():
 	isOpen = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(delta : float):
 	pass
 
 func _on_menu_open():

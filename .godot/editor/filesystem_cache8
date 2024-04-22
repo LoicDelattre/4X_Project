@@ -1,18 +1,18 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1713733381
+::res://::1713736538
 Camera2D.gd::GDScript::-1::1713716252::0::1::::<>Camera2D<>::
-default_env.tres::Environment::4129567740928833960::1713731226::0::1::::<><>::
+default_env.tres::Environment::4129567740928833960::1713733448::0::1::::<><>::
 global.gd::GDScript::-1::1713716252::0::1::::<>Node<>::
 icon.png::CompressedTexture2D::2721558997628146665::1712230952::1712230952::1::::<><>::
 provinceID.png::CompressedTexture2D::6802907915895459961::1712230952::1712230952::1::::<><>::
 Roman Numerals Buttons.png::CompressedTexture2D::7124406931221457675::1712432143::1712432143::1::::<><>::
 world.gd::GDScript::-1::1713727612::0::1::::<>Node2D<>::
-world.tscn::PackedScene::6826122789163823538::1713731225::0::1::::<><>::res://world.gd<>res://Camera2D.gd<>uid://dla2com36m6m6::::res://UI/ui.tscn<>res://map/RegionsMap.gd<>uid://cg0j48on7y1ml::::res://map/test_map.png
+world.tscn::PackedScene::6826122789163823538::1713733447::0::1::::<><>::res://world.gd<>res://Camera2D.gd<>uid://dla2com36m6m6::::res://UI/ui.tscn<>res://map/RegionsMap.gd<>uid://cg0j48on7y1ml::::res://map/test_map.png
 ::res://Dynamic Items/::1713716252
-::res://Dynamic Items/Armies/::1713731226
+::res://Dynamic Items/Armies/::1713733448
 army.gd::GDScript::-1::1713729829::0::1::::<>Sprite2D<>::
 army.tscn::PackedScene::6683298669072379631::1713716252::0::1::::<><>::
-army_static.tscn::PackedScene::2258687262341942717::1713731226::0::1::::<><>::uid://dqb2itjjaf0xj::::res://UI/Menus/Military/soldier.png<>res://Dynamic Items/Armies/army.gd
+army_static.tscn::PackedScene::2258687262341942717::1713733448::0::1::::<><>::uid://dqb2itjjaf0xj::::res://UI/Menus/Military/soldier.png<>res://Dynamic Items/Armies/army.gd
 ::res://Example/::1712742197
 1.png::CompressedTexture2D::7977209491509771004::1712230952::1712230952::1::::<><>::
 2.png::CompressedTexture2D::5935775707180589513::1712230952::1712230952::1::::<><>::
@@ -32,16 +32,16 @@ TileData.gd::GDScript::-1::1713716252::0::1::::TileCharacteristics<>Resource<>::
 ::res://map/Regions/::1713729006
 RegionArea.gd::GDScript::-1::1713729006::0::1::::<>Area2D<>::
 region_area.tscn::PackedScene::8073103264446904766::1713716252::0::1::::<><>::res://map/Regions/RegionArea.gd
-::res://Nations/::1713731225
-France.tres::Resource/NationData::5830653752817706647::1713728039::0::1::::<><>::res://Nations/NationData.gd
-NationData.gd::GDScript::-1::1713728039::0::1::::NationData<>Resource<>::
+::res://Nations/::1713733447
+France.tres::Resource/Resource::5830653752817706647::1713728039::0::1::::<><>::res://Nations/NationData.gd
+NationData.gd::GDScript::-1::1713733383::0::1::::NationData<>Resource<>::
 NationSprites.gd::GDScript::-1::1713728397::0::1::::<>Node2D<>::
-NationSprites.tscn::PackedScene::4266365876683595909::1713731225::0::1::::<><>::res://Nations/NationSprites.gd
-::res://UI/::1713731226
+NationSprites.tscn::PackedScene::4266365876683595909::1713733447::0::1::::<><>::res://Nations/NationSprites.gd
+::res://UI/::1713733448
 army_info.gd::GDScript::-1::1713731216::0::1::::<>Control<>::
-army_info.tscn::PackedScene::2638125448940528147::1713731226::0::1::::<><>::uid://ds0l1ovps6lh::::res://UI/Resources/inventory-background.png<>res://UI/army_info.gd<>uid://croa3d05fou6::::res://Fonts/KELMSCOT.ttf<>uid://brw3eui8xjk5q::::res://UI/Resources/cross.png<>uid://ukqolt01gw13::::res://UI/TilesInfo/ui_tile_tax_slot.tscn<>uid://c3vvc7g1p5kje::::res://UI/TilesInfo/ui_tile_manpower_slot.tscn
+army_info.tscn::PackedScene::2638125448940528147::1713733448::0::1::::<><>::uid://ds0l1ovps6lh::::res://UI/Resources/inventory-background.png<>res://UI/army_info.gd<>uid://croa3d05fou6::::res://Fonts/KELMSCOT.ttf<>uid://brw3eui8xjk5q::::res://UI/Resources/cross.png<>uid://ukqolt01gw13::::res://UI/TilesInfo/ui_tile_tax_slot.tscn<>uid://c3vvc7g1p5kje::::res://UI/TilesInfo/ui_tile_manpower_slot.tscn
 ui.gd::GDScript::-1::1713731224::0::1::::<>MarginContainer<>::
-ui.tscn::PackedScene::7932983016668844931::1713731225::0::1::::<><>::uid://cop7fqpefcwff::::res://UI/TilesInfo/tile_info_ui.tscn<>uid://wj6rgy1l7c2::::res://UI/Menus/menus_ui.tscn<>res://UI/ui.gd<>uid://cp27i3xdebe0b::::res://UI/Time/time_ui.tscn<>uid://bdt6sncbbfopf::::res://UI/army_info.tscn
+ui.tscn::PackedScene::7932983016668844931::1713733447::0::1::::<><>::uid://cop7fqpefcwff::::res://UI/TilesInfo/tile_info_ui.tscn<>uid://wj6rgy1l7c2::::res://UI/Menus/menus_ui.tscn<>res://UI/ui.gd<>uid://cp27i3xdebe0b::::res://UI/Time/time_ui.tscn<>uid://bdt6sncbbfopf::::res://UI/army_info.tscn
 ::res://UI/Menus/::1713723170
 menus_ui.gd::GDScript::-1::1713716252::0::1::::<>Control<>::
 menus_ui.tscn::PackedScene::46019026426708311::1713723170::0::1::::<><>::res://UI/Menus/menus_ui.gd<>uid://ds0l1ovps6lh::::res://UI/Resources/inventory-background.png<>uid://byspmd1yhm041::::res://UI/Resources/inventory-slot.png<>uid://kmuj65sxauae::::res://UI/Resources/military.png<>uid://b3im742u8chim::::res://UI/Menus/Military/MilitaryMenu.tscn
@@ -61,9 +61,9 @@ inventory-slot.png::CompressedTexture2D::4109044113832581288::1712672923::171267
 military.png::CompressedTexture2D::727893056846097924::1712672311::1712672978::1::::<><>::
 money.png::CompressedTexture2D::9080706109304065918::1712672923::1712672990::1::::<><>::
 valid.png::CompressedTexture2D::647748041113920591::1712672311::1712672978::1::::<><>::
-::res://UI/TilesInfo/::1713731225
+::res://UI/TilesInfo/::1713733447
 tile_info_script.gd::GDScript::-1::1713716252::0::1::::<>Control<>::
-tile_info_ui.tscn::PackedScene::5788403581101799591::1713731225::0::1::::<><>::res://UI/TilesInfo/tile_info_script.gd<>uid://ds0l1ovps6lh::::res://UI/Resources/inventory-background.png<>uid://croa3d05fou6::::res://Fonts/KELMSCOT.ttf<>uid://brw3eui8xjk5q::::res://UI/Resources/cross.png<>uid://ukqolt01gw13::::res://UI/TilesInfo/ui_tile_tax_slot.tscn<>uid://c3vvc7g1p5kje::::res://UI/TilesInfo/ui_tile_manpower_slot.tscn
+tile_info_ui.tscn::PackedScene::5788403581101799591::1713733447::0::1::::<><>::res://UI/TilesInfo/tile_info_script.gd<>uid://ds0l1ovps6lh::::res://UI/Resources/inventory-background.png<>uid://croa3d05fou6::::res://Fonts/KELMSCOT.ttf<>uid://brw3eui8xjk5q::::res://UI/Resources/cross.png<>uid://ukqolt01gw13::::res://UI/TilesInfo/ui_tile_tax_slot.tscn<>uid://c3vvc7g1p5kje::::res://UI/TilesInfo/ui_tile_manpower_slot.tscn
 ui_tile_manpower_slot.tscn::PackedScene::6782761241740857854::1712687052::0::1::::<><>::uid://3t6c5eoc0wrq::::res://UI/TilesInfo/ui_tile_slot.tscn<>uid://d2m05x1co8pp3::::res://UI/Resources/money.png
 ui_tile_slot.tscn::PackedScene::2006398180075111890::1712742197::0::1::::<><>::uid://byspmd1yhm041::::res://UI/Resources/inventory-slot.png<>uid://croa3d05fou6::::res://Fonts/KELMSCOT.ttf
 ui_tile_tax_slot.tscn::PackedScene::1425417731579205400::1713729850::0::1::::<><>::uid://3t6c5eoc0wrq::::res://UI/TilesInfo/ui_tile_slot.tscn<>uid://bxhlb5m5qsajt::::res://UI/Resources/Idle2.png

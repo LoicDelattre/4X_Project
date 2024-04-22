@@ -12,12 +12,15 @@ var armyData : Array = []
 
 var mouseOnSprite : bool = false
 
+@onready var shadowNode : Polygon2D = $Shadow
+
 signal spriteClicked
 signal mouseInSprite
 signal mouseLeftSprite
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	shadowNode.visible = false
 	loadData()
 	pass # Replace with function body.
 
@@ -40,10 +43,12 @@ func _input(event : InputEvent) -> void:
 
 func _on_contour_mouse_entered() -> void:
 	mouseOnSprite = true
+	shadowNode.visible = true
 	emit_signal("mouseInSprite")
 	pass # Replace with function body.
 
 func _on_contour_mouse_exited() -> void:
 	mouseOnSprite = false
+	shadowNode.visible = false
 	emit_signal("mouseLeftSprite")
 	pass # Replace with function body.

@@ -7,6 +7,7 @@ var gameSpeedChange : bool = false
 
 var overlayMapMode : int = 0
 var mapModes : Array = ["Countries", "Military"]
+var curProvinceHovered : String = ""
 
 var regionsDict : Dictionary = {
 	"#2f3699" : ["France", [0,0]],
